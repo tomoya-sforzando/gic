@@ -1,8 +1,9 @@
+config.ini
+
 # Google APIs
 
 token.json
 credentials.json
-
 
 # Created by https://www.gitignore.io/api/osx,linux,python,windows,spreadsheet,pycharm+all
 
