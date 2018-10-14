@@ -2,7 +2,10 @@
 
 ## Setup 
 
-(T.B.D.)
+### Install `hub`
+```sh
+$ brew install hub
+```
 
 ## Usage
 
