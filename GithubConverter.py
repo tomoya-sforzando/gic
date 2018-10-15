@@ -39,4 +39,4 @@ class GithubConverter:
 
 if __name__ == '__main__':
     github_converter = GithubConverter()
-    github_converter.create_issue_for_template()
+    # github_converter.create_issue_for_template()

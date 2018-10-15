@@ -6,7 +6,6 @@ from configparser import ConfigParser
 
 
 class GoogleSpreadsheets:
-
     def __init__(self):
 
         config = ConfigParser()
@@ -24,18 +23,19 @@ class GoogleSpreadsheets:
 
         # Call the Sheets API
         spreadsheet_id = config.get(__class__.__name__, 'spreadsheet_id')
-        range_of_sheet = config.get(__class__.__name__,'range_of_sheet')
+        range_of_sheet = config.get(__class__.__name__, 'range_of_sheet')
         result = service.spreadsheets().values().get(spreadsheetId=spreadsheet_id,
-                                                    range=range_of_sheet).execute()
-        values = result.get('values', [])
+                                                     range=range_of_sheet).execute()
+        self.sheet_values = result.get('values', [])
 
-        if not values:
+    def print_values(self):
+        if not self.sheet_values:
             print('No data found.')
         else:
-            print(len(values))
-            for row in values:
+            for row in self.sheet_values:
                 print(row)
 
 
 if __name__ == '__main__':
     google_spreadsheets = GoogleSpreadsheets()
+    google_spreadsheets.print_values()
