@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
-import subprocess
+from GoogleSpreadsheets import GoogleSpreadsheets
+from GithubConverter import GithubConverter
 
-cmd = ['hub', 'issue', 'create',  # create issue
-       '-o',  # open browser
-       '-m', 'Title\n\n<!-- 要望のテンプレート -->\n\n## 概要\n\n## タスク\n\n* [ ] 細かいタスクに分解できているなら書き出す\n\n## 備考',  # title + description
-       '-a', 'tomoya-sforzando',  # assignee: username
-       '-M', '1',  # milestone: number
-       '-l', 'enhancement,good first issue'  # label: label name
-       ]
+if __name__ == '__main__':
+    sheet = GoogleSpreadsheets()
+    converter = GithubConverter()
 
-try:
-    out = subprocess.run(cmd, stdout=subprocess.PIPE)
-    print(out.stdout.decode())
-except:
-    print("Error.")
+    # check columns of google_spreadsheets
+
+    # create issues
+    # for issue in sheet.get_issues():
+    #     title = issue['title']
+    #     description = issue['description']
+    #     assignees = issue['assignees']
+    #     milestone = issue['milestone']
+    #     label = issue['label']
+    #
+    #     converter.create_issue(title, description, assignees, milestone, label)
