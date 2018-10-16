@@ -1,11 +1,8 @@
 # GitHub Issues Converter
 
-## Setup 
+## Setup
 
-### Install `hub`
-```sh
-$ brew install hub
-```
+(T.B.D.)
 
 ## Usage
 
